@@ -28,13 +28,13 @@ fi
 ################### ANDROID NDK ########################
 ########################################################
 ########################################################
-if [ ! -d ${ROOT_DIR}/../android-ndk/${ANDROID_NDK} ]; then
-    cd ${ROOT_DIR}/../android-ndk/
-    echo "Downloading Android NDK"
-    wget --quiet "https://dl.google.com/android/repository/${ANDROID_NDK}-linux-x86_64.zip"
-    unzip -q ${ANDROID_NDK}-linux-x86_64.zip
-    rm -rf *.zip*
-fi
+# if [ ! -d ${ROOT_DIR}/../android-ndk/${ANDROID_NDK} ]; then
+#     cd ${ROOT_DIR}/../android-ndk/
+#     echo "Downloading Android NDK"
+#     wget --quiet "https://dl.google.com/android/repository/${ANDROID_NDK}-linux-x86_64.zip"
+#     unzip -q ${ANDROID_NDK}-linux-x86_64.zip
+#     rm -rf *.zip*
+# fi
 
 cd ${ROOT_DIR}
 
