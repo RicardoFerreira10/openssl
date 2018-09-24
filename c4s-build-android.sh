@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../config/android/build.config
+# . ../config/android/build.config
 
 ########################################################
 ########################################################
@@ -35,6 +35,8 @@ if [ ! -d ${ROOT_DIR}/../android-ndk/${ANDROID_NDK} ]; then
     unzip -q ${ANDROID_NDK}-linux-x86_64.zip
     rm -rf *.zip*
 fi
+
+exit 0
 
 cd ${ROOT_DIR}
 
