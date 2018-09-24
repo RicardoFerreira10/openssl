@@ -67,7 +67,7 @@ for arch in ${archs[@]}; do
 
     echo "Installing OpenSSL ${VERSION}"
     mkdir -p ${ROOT_DIR}/c4s.build/libs/Android/${arch}/
-    find . -name '*.h' -exec cp \{\} ${ROOT_DIR}/c4s.build/ \;
+    #find . -name '*.h' -exec cp \{\} ${ROOT_DIR}/c4s.build/ \;
     mkdir -p ${ROOT_DIR}/c4s.build/include/openssl
     cp libcrypto.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libcrypto.a
     cp libssl.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libssl.a
