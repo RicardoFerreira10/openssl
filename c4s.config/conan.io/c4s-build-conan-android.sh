@@ -2,8 +2,8 @@
 
 ROOT_DIR=$(pwd)
 SOURCE_DIR=${ROOT_DIR}/"openssl-1.0.2n"
-archs=(armeabi-v7a arm64-v8a x86 x86_64)
-
+# archs=(armeabi-v7a arm64-v8a x86 x86_64)
+archs=(armeabi-v7a)
 ########################################################
 ########################################################
 ################## ANDROID BUILD #######################
@@ -23,25 +23,25 @@ for arch in ${archs[@]}; do
           _ANDROID_EABI=arm-linux-androideabi-4.9
             configure_platform="android-armv7"
         ;;
-#         "arm64-v8a")
-#           _ANDROID_TARGET_SELECT=arch-arm64-v8a
-#           _ANDROID_ARCH=arch-arm64
-#           _ANDROID_EABI=aarch64-linux-android-4.9
-#           configure_platform="linux-generic64 -DB_ENDIAN"
-#         ;;
-#         "x86")
-#           _ANDROID_TARGET_SELECT=arch-x86
-#           _ANDROID_ARCH=arch-x86
-#           _ANDROID_EABI=x86-4.9
-#           configure_platform="android-x86"
-#         ;;
-#         "x86_64")
-#           _ANDROID_TARGET_SELECT=arch-x86_64
-#           _ANDROID_ARCH=arch-x86_64
-#           _ANDROID_EABI=x86_64-4.9
-#           xLIB="lib64"
-#           configure_platform="linux-generic64"
-#         ;;
+        "arm64-v8a")
+          _ANDROID_TARGET_SELECT=arch-arm64-v8a
+          _ANDROID_ARCH=arch-arm64
+          _ANDROID_EABI=aarch64-linux-android-4.9
+          configure_platform="linux-generic64 -DB_ENDIAN"
+        ;;
+        "x86")
+          _ANDROID_TARGET_SELECT=arch-x86
+          _ANDROID_ARCH=arch-x86
+          _ANDROID_EABI=x86-4.9
+          configure_platform="android-x86"
+        ;;
+        "x86_64")
+          _ANDROID_TARGET_SELECT=arch-x86_64
+          _ANDROID_ARCH=arch-x86_64
+          _ANDROID_EABI=x86_64-4.9
+          xLIB="lib64"
+          configure_platform="linux-generic64"
+        ;;
         *)
         configure_platform="linux-elf"
         ;;
