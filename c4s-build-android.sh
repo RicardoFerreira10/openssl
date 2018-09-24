@@ -36,8 +36,6 @@ fi
 #     rm -rf *.zip*
 # fi
 
-exit 0
-
 cd ${ROOT_DIR}
 
 echo "Setting Android NDK environment"
