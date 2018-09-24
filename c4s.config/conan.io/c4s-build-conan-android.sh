@@ -23,25 +23,25 @@ for arch in ${archs[@]}; do
           _ANDROID_EABI=arm-linux-androideabi-4.9
             configure_platform="android-armv7"
         ;;
-        "arm64-v8a")
-          _ANDROID_TARGET_SELECT=arch-arm64-v8a
-          _ANDROID_ARCH=arch-arm64
-          _ANDROID_EABI=aarch64-linux-android-4.9
-          configure_platform="linux-generic64 -DB_ENDIAN"
-        ;;
-        "x86")
-          _ANDROID_TARGET_SELECT=arch-x86
-          _ANDROID_ARCH=arch-x86
-          _ANDROID_EABI=x86-4.9
-          configure_platform="android-x86"
-        ;;
-        "x86_64")
-          _ANDROID_TARGET_SELECT=arch-x86_64
-          _ANDROID_ARCH=arch-x86_64
-          _ANDROID_EABI=x86_64-4.9
-          xLIB="lib64"
-          configure_platform="linux-generic64"
-        ;;
+#         "arm64-v8a")
+#           _ANDROID_TARGET_SELECT=arch-arm64-v8a
+#           _ANDROID_ARCH=arch-arm64
+#           _ANDROID_EABI=aarch64-linux-android-4.9
+#           configure_platform="linux-generic64 -DB_ENDIAN"
+#         ;;
+#         "x86")
+#           _ANDROID_TARGET_SELECT=arch-x86
+#           _ANDROID_ARCH=arch-x86
+#           _ANDROID_EABI=x86-4.9
+#           configure_platform="android-x86"
+#         ;;
+#         "x86_64")
+#           _ANDROID_TARGET_SELECT=arch-x86_64
+#           _ANDROID_ARCH=arch-x86_64
+#           _ANDROID_EABI=x86_64-4.9
+#           xLIB="lib64"
+#           configure_platform="linux-generic64"
+#         ;;
         *)
         configure_platform="linux-elf"
         ;;
@@ -67,7 +67,7 @@ for arch in ${archs[@]}; do
 
     echo "Installing OpenSSL ${VERSION}"
     mkdir -p ${ROOT_DIR}/c4s.build/libs/Android/${arch}/
-    #find . -name '*.h' -exec cp \{\} ${ROOT_DIR}/c4s.build/ \;
+    find . -name '*.h' -exec cp --parents \{\} ${ROOT_DIR}/c4s.build/ \;
     mkdir -p ${ROOT_DIR}/c4s.build/include/openssl
     cp libcrypto.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libcrypto.a
     cp libssl.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libssl.a
