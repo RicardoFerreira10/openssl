@@ -69,8 +69,8 @@ for arch in ${archs[@]}; do
     mkdir -p ${ROOT_DIR}/c4s.build/libs/Android/${arch}/
     find . -name '*.h' -exec cp --parents \{\} ${ROOT_DIR}/c4s.build/ \;
     mkdir -p ${ROOT_DIR}/c4s.build/include/openssl
-    cp libcrypto.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libcrypto.a
-    cp libssl.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libssl.a
+    cp -R libcrypto.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libcrypto.a
+    cp -R libssl.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libssl.a
 done
 
 exit 0
