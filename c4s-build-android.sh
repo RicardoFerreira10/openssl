@@ -47,6 +47,9 @@ export ANDROID_NDK_ROOT=${NDK_ROOT}
 export ANDROID_NDK_HOME=${NDK_ROOT}
 export NDK_PLATFORM=android-21
 
+echo $NDK_ROOT
+exit 0
+
 ########################################################
 ########################################################
 ################## ANDROID BUILD #######################
