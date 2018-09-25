@@ -41,7 +41,7 @@ cd ${ROOT_DIR}
 echo "Setting Android NDK environment"
 
 set -e
-NDK_ROOT=$(readlink -f "./${ANDROID_NDK}")
+NDK_ROOT=$(readlink -f "../${ANDROID_NDK}")
 
 export ANDROID_NDK_ROOT=${NDK_ROOT}
 export ANDROID_NDK_HOME=${NDK_ROOT}
