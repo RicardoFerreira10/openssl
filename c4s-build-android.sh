@@ -24,30 +24,31 @@ if [ ! -d ${SOURCE_DIR} ]; then
     tar -zxf ${SOURCE}
 fi
 
-# ########################################################
-# ################### ANDROID NDK ########################
-# ########################################################
-# ########################################################
-# if [ ! -d ${ROOT_DIR}/../android-ndk/${ANDROID_NDK} ]; then
-#     cd ${ROOT_DIR}/../android-ndk/
-#     echo "Downloading Android NDK"
-#     wget --quiet "https://dl.google.com/android/repository/${ANDROID_NDK}-linux-x86_64.zip"
-#     unzip -q ${ANDROID_NDK}-linux-x86_64.zip
-#     rm -rf *.zip*
-# fi
+########################################################
+################### ANDROID NDK ########################
+########################################################
+########################################################
+if [ ! -d ${ROOT_DIR}/../android-ndk/${ANDROID_NDK} ]; then
+    mkdir -p ${ROOT_DIR}/../android-ndk/
+    cd ${ROOT_DIR}/../android-ndk/
+    echo "Downloading Android NDK"
+    wget --quiet "https://dl.google.com/android/repository/${ANDROID_NDK}-linux-x86_64.zip"
+    unzip -q ${ANDROID_NDK}-linux-x86_64.zip
+    rm -rf *.zip*
+fi
+
+exit 0
 
 cd ${ROOT_DIR}
 
 echo "Setting Android NDK environment"
 
 set -e
-NDK_ROOT=$(readlink -f "../${ANDROID_NDK}")
+NDK_ROOT=$(readlink -f "../android-ndk/${ANDROID_NDK}")
 
 export ANDROID_NDK_ROOT=${NDK_ROOT}
 export ANDROID_NDK_HOME=${NDK_ROOT}
 export NDK_PLATFORM=android-21
-
-echo $NDK_ROOT
 
 ########################################################
 ########################################################
