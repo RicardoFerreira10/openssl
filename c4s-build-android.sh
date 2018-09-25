@@ -36,14 +36,13 @@ fi
 #     rm -rf *.zip*
 # fi
 
-# cd ${ROOT_DIR}
+cd ${ROOT_DIR}
 
-# echo "Setting Android NDK environment"
+echo "Setting Android NDK environment"
 
-# set -e
-# NDK_ROOT=$(readlink -f "../android-ndk/${ANDROID_NDK}")
+set -e
+NDK_ROOT=$(readlink -f "./${ANDROID_NDK}")
 
-# exit 0
 # export ANDROID_NDK_ROOT=${NDK_ROOT}
 # export ANDROID_NDK_HOME=${NDK_ROOT}
 # export NDK_PLATFORM=android-21
