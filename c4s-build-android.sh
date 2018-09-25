@@ -42,15 +42,9 @@ echo "Setting Android NDK environment"
 
 set -e
 NDK_ROOT=$(readlink -f "../android-ndk/${ANDROID_NDK}")
-
 export ANDROID_NDK_ROOT=${NDK_ROOT}
 export ANDROID_NDK_HOME=${NDK_ROOT}
 export NDK_PLATFORM=android-21
-
-echo $NDK_ROOT
-echo $ANDROID_NDK_ROOT
-echo $ANDROID_NDK_HOME
-echo $NDK_PLATFORM
 
 ########################################################
 ########################################################
