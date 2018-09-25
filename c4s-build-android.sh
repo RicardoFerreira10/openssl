@@ -140,6 +140,8 @@ for arch in ${archs[@]}; do
     mkdir -p ${ROOT_DIR}/c4s.build/include/openssl
     cp libcrypto.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libcrypto.a
     cp libssl.a ${ROOT_DIR}/c4s.build/libs/Android/${arch}/libssl.a
+    
+    break;
 
 done
 
